@@ -1,7 +1,7 @@
 ---
 title: "Initial Korean covid 19"
-author: "your name here"
-date: "todays date"
+author: "Alfredo Acevedo"
+date: "3/19/2024"
 output:
   html_document: default
   pdf_document: default
@@ -27,15 +27,31 @@ state of a patient must be died or alive - we adjust that as well
   
 # Your Question - Is dying independent of sex?
 
-
+## Methods
+From what we got from the problem, it can be solved as categorical - categorical. so taking these two to solve for the answer. Which is age and sex as the two category.
 
 
 
 
 ## Graphical results - use ggplot commands to do this  
+  
+
+```{r}
+dd2 <- kRdata %>% group_by(result,sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
+# the group_by followed by summarize(count=n())
 
+basicC <- ggplot(dd2,aes(x=result,y=count,fill=sex))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=sex)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+  
+  
   
 
 
