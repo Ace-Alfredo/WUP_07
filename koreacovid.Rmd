@@ -76,9 +76,7 @@ chisq.test(table2)
 chisqtestGC(table2)
 ```
   
-```{r}
-fisherXY(kRdata$sex,kRdata$result)
-```
+
   
 
 
