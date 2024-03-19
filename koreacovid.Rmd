@@ -51,7 +51,7 @@ basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=sex))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
   
-  
+According to the graph it shows that women appear to be getting covid more then men. but men appear to die to covid more.  
   
 
 
@@ -60,12 +60,29 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
   
 ## Numerical results
-
+  
+```{r}
+table2 <- xtabs(~result + sex, data=kRdata)
+rowPerc(table2)
+colPerc(table2)
+```
+  
+It still shows that women get covid more but die less. For the men they get covid less then women but are more likely to die from covid. 
 
 ## Inferential results 
+  
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+```
+  
+```{r}
+fisherXY(kRdata$sex,kRdata$result)
+```
+  
 
 
 
 
 ## Conclusions
-
+With the data above from determining the death rates and the rate of getting covid. we can confirm that the more females got covid, but are least likely to die. but males are more likely to die covid, but are 
