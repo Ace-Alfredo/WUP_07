@@ -54,10 +54,6 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 According to the graph it shows that women appear to be getting covid more then men. but men appear to die to covid more.  
   
 
-
-
-
-
   
 ## Numerical results
   
@@ -75,12 +71,9 @@ It still shows that women get covid more but die less. For the men they get covi
 chisq.test(table2)
 chisqtestGC(table2)
 ```
-  
-
-  
-
-
+From the information above. We can see that p-value is 0.0009. Which means it's its lower then 0.05
+we can say that more male are likely to die from covid then females.
 
 
 ## Conclusions
-With the data above from determining the death rates and the rate of getting covid. we can confirm that the more females got covid, but are least likely to die. but males are more likely to die covid, but are 
+from the beginning we can see that cat_cat was needed since its categorical - categorical problem. Since the two things we are comparing are genders. With the data above from determining the death rates and the rate of getting covid. we can confirm that the more females got covid, but are least likely to die. but males are more likely to die covid, but are least likely to get covid, compared to the females, then the females. But, in the end we can say that the death rate of paitents is not independent from there sex
